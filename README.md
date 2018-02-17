@@ -67,3 +67,35 @@ CMD node app.js
 
 `docker run --rm -p 8080:3000 -d nodejs-app`
 
+## Docker Images
+`docker images`
+
+`docker rmi`
+
+
+## Docker-Compose
+
+Describe the environment docker-compose.yml
+```docker
+version: "3"
+services:
+    node:
+        ports:
+            - "8080:3000"
+        networks:
+            - webnet
+        build:
+            context:-/
+            dockerfile: Dockerfile
+networks:
+    webnet:
+```
+
+Services are the container which you are going to start.
+
+`docker-compose up node`
+
+
+
+
+
