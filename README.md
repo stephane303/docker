@@ -25,5 +25,17 @@
 `docker rm 49..`
 `docker ps -a -q` return ids only
 `docker rm $(docker ps -a -q)` delete stopped container
+`docker run -it -d --rm --name ubuntu1 ubuntu /bin/bash` detatch mode + delete container when finished
+`docker attach ubuntu1`
+## Mount volume
+`docker run -v %CD%:/files maxcunes/unrar -x -r Trunk.rar` => -v host_file:container_file
 
+## Node example
+`docker run -it --rm --name node node:7.7.4-alpine`
+=> by default execute node
 
+## Port binding
+`docker run -it --rm --name node -d -v %CD%:/src -w /src node:7.7.4-alpine node app.js` => -w working directory
+`docker logs node`
+`docker inspect node`
+`docker run -it --rm --name node -d -v %CD%:/src -w /src node:7.7.4-alpine -p 8080:3000 node app.js` => -p host_port:container_port
