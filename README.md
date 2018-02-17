@@ -15,10 +15,13 @@
 ## To the CLI
 `docker run -it ubuntu /bin/bash`
 -it => intertactive container
+
 `docker ps`
 => list running container
+
 `docker ps -a`
 => list stopped container
+
 `docker start 49..`
 `docker attach 49..`
 `docker stop 49 ..`
@@ -39,3 +42,17 @@
 `docker logs node`
 `docker inspect node`
 `docker run -it --rm --name node -d -v %CD%:/src -w /src node:7.7.4-alpine -p 8080:3000 node app.js` => -p host_port:container_port
+
+## Dockerfile
+How to create an image in Docker
+```docker
+FROM node:7.7.4-alpine
+EXPOSE 3000
+RUN mkdir /src
+COPY ap.js /src
+WORKDIR /src
+CMD node app.js
+```
+`docker build -t nodejs-app .` => -t = tag
+`docker run --rm -p 8080:3000 -d nodejs-app`
+
