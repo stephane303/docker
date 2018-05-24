@@ -95,6 +95,15 @@ Services are the container which you are going to start.
 
 `docker-compose up node`
 
+Show statistics.
+
+`docker-compose stats`
+
+Show config 
+
+`docker-compose config`
+
+
 
 
 
