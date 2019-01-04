@@ -44,6 +44,9 @@
 `docker run -it --rm --name node node:7.7.4-alpine`
 => by default execute node
 
+## Copy file local <-> container
+ `docker cp . docker_informix_1:/opt/ibm/data/`
+
 ## Port binding
 `docker run -it --rm --name node -d -v %CD%:/src -w /src node:7.7.4-alpine node app.js` => -w working directory
 
