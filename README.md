@@ -106,6 +106,11 @@ Show config
 
 `docker-compose config`
 
+## Clean up ##
+
+`docker system prune`
+
+
 
 
 
