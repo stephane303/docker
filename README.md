@@ -106,9 +106,30 @@ Show config
 
 `docker-compose config`
 
+## Docker swarm ##
+
+Show where container are running
+`docker stack ps <stack_name>`
+
+Use docker cli on the swarm
+`eval "$(<env.sh)" `
+
+Deploy with multiple compose.yml (to be fixed, not working right now)
+
+`docker stack deploy --compose-file docker-compose.yml  --compose-file docker-compose.deploy.yml  sylvia-edunil`
+
+Workaround:
+`docker-compose.exe -f docker-compose.yml  -f docker-compose.deploy.yml  config > stack.yml`
+`docker stack deploy --compose-file stack.yml  sylvia-edunil`
+
+
+
+
 ## Clean up ##
 
 `docker system prune`
+
+
 
 
 
