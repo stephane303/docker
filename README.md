@@ -132,30 +132,23 @@ which will show errors with downloading images, mounting nfs volumes amongst oth
 
 Not all errors can be found in the way described above. Another usefull tool is looking at the docker deamon logs which can be done the follwing way as explained on stackoverflow:
 
-journalctl -u docker.service | tail -n 50 
+`journalctl -u docker.service | tail -n 50 `
+
 It depends on your OS. Here are the few locations, with commands for few Operating Systems:
 
-`Ubuntu (old using upstart ) - /var/log/upstart/docker.log
-
+```
+Ubuntu (old using upstart ) - /var/log/upstart/docker.log
 Ubuntu (new using systemd ) - journalctl -u docker.service
-
 Boot2Docker - /var/log/docker.log
-
 Debian GNU/Linux - /var/log/daemon.log
-
 CentOS - /var/log/daemon.log | grep docker
-
 CoreOS - journalctl -u docker.service
-
 Fedora - journalctl -u docker.service
-
 Red Hat Enterprise Linux Server - /var/log/messages | grep docker
-
 OpenSuSE - journalctl -u docker.service
-
 OSX - ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/log/d‌​ocker.log
-
-Windows - Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time, as mentioned here.`
+Windows - Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time, as mentioned here.
+```
 
 
 ## Clean up ##
